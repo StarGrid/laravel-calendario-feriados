@@ -4,9 +4,9 @@ namespace StarGrid\LaravelHolidayCalendar\Parser\Factory;
 
 use PHPUnit\Framework\TestCase;
 
-use StarGrid\LaravelHolidayCalendar\Enum\ResponseTypeEnum;
-use StarGrid\LaravelHolidayCalendar\Parser\JsonParser;
-use StarGrid\LaravelHolidayCalendar\Parser\XmlParser;
+use StarGrid\LaravelHolidayCalendar\{
+    Enum\ResponseTypeEnum, Parser\JsonParser, Parser\XmlParser
+};
 
 /**
  * Class ParserFactoryTest
@@ -37,6 +37,6 @@ class ParserFactoryTest extends TestCase
 
         $xmlParser = $parserFactory->makeParser(ResponseTypeEnum::XML_RESPONSE());
 
-        $this->assertEquals(new XmlParser(), $xmlParser);
+        $this->assertEquals(new XmlParser, $xmlParser);
     }
 }
