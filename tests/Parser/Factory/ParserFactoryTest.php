@@ -4,7 +4,7 @@ namespace StarGrid\LaravelHolidayCalendar\Parser\Factory;
 
 use PHPUnit\Framework\TestCase;
 
-use StarGrid\LaravelHolidayCalendar\Api\ResponseTypeEnum;
+use StarGrid\LaravelHolidayCalendar\Enum\ResponseTypeEnum;
 use StarGrid\LaravelHolidayCalendar\Parser\JsonParser;
 use StarGrid\LaravelHolidayCalendar\Parser\XmlParser;
 
