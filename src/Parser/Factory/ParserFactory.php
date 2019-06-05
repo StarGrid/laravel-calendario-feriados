@@ -23,7 +23,7 @@ class ParserFactory
      * @return ParserInterface
      * @throws ParserException
      */
-    public static function makeParser(ResponseTypeEnum $responseTypeEnum) : ParserInterface
+    public function makeParser(ResponseTypeEnum $responseTypeEnum) : ParserInterface
     {
         if ($responseTypeEnum->value() === ResponseTypeEnum::JSON_RESPONSE) {
             return new JsonParser;
