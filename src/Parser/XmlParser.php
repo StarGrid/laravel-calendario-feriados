@@ -2,6 +2,8 @@
 
 namespace StarGrid\LaravelHolidayCalendar\Parser;
 
+use StarGrid\LaravelHolidayCalendar\Entity\HolidayEntity;
+use StarGrid\LaravelHolidayCalendar\Enum\HolidayTypeEnum;
 use StarGrid\LaravelHolidayCalendar\Parser\Contract\ParserInterface;
 
 /**
@@ -15,8 +17,26 @@ class XmlParser implements ParserInterface
     /**
      * {@inheritdoc}
      */
-    public function parse($response): array
+    public function parse(string $rawResponse): array
     {
-        // TODO: Implement parse() method.
+        $holidays = simplexml_load_string($rawResponse);
+
+        $formattedResponse = [];
+
+        foreach ($holidays->event as $holiday) {
+            $holidayType = (int) $holiday->type_code;
+
+            $formattedResponse[] = new HolidayEntity(
+                \DateTime::createFromFormat('d/m/Y', $holiday->date),
+                $holiday->name,
+                $holiday->description,
+                $holiday->link,
+                HolidayTypeEnum::memberByValue($holidayType),
+                $holiday->type,
+                json_encode($holiday)
+            );
+        }
+
+        return $formattedResponse;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace StarGrid\LaravelHolidayCalendar\Parser\Contract;
 
+use StarGrid\LaravelHolidayCalendar\Entity\HolidayEntity;
+
 /**
  * Interface ParserInterface
  * @package StarGrid\LaravelHolidayCalendar\Parser
@@ -13,8 +15,8 @@ interface ParserInterface
     /**
      * Método responsável por formatar o retorno da API.
      *
-     * @param $response
-     * @return array
+     * @param string $rawResponse
+     * @return HolidayEntity[]
      */
-    public function parse($response): array;
+    public function parse(string $rawResponse): array;
 }
