@@ -30,6 +30,9 @@ class HolidayEntity
     /** @var string $typeName Nome do tipo de feriado (descrição retornada da API). */
     protected $typeName;
 
+    /** @var string $rawData Dados do feriado retornado da API. */
+    protected $rawData;
+
     /**
      * HolidayEntity constructor.
      *
@@ -39,8 +42,9 @@ class HolidayEntity
      * @param string $link Endereço da web para consultar informações sobre o feriado.
      * @param HolidayTypeEnum $typeEnum Objeto com o tipo de feriado.
      * @param string $typeName Nome do tipo de feriado (descrição retornada da API).
+     * @param string $rawData Dados do feriado retornado da API.
      */
-    public function __construct(\DateTime $date, string $name, string $description, string $link, HolidayTypeEnum $typeEnum, string $typeName)
+    public function __construct(\DateTime $date, string $name, string $description, string $link, HolidayTypeEnum $typeEnum, string $typeName, string $rawData)
     {
         $this->date = $date;
         $this->name = $name;
@@ -48,6 +52,7 @@ class HolidayEntity
         $this->link = $link;
         $this->typeEnum = $typeEnum;
         $this->typeName = $typeName;
+        $this->rawData = $rawData;
     }
 
     /**
@@ -155,6 +160,24 @@ class HolidayEntity
     public function setTypeName(string $typeName): HolidayEntity
     {
         $this->typeName = $typeName;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRawData(): string
+    {
+        return $this->rawData;
+    }
+
+    /**
+     * @param string $rawData
+     * @return HolidayEntity
+     */
+    public function setRawData(string $rawData): HolidayEntity
+    {
+        $this->rawData = $rawData;
         return $this;
     }
 }
