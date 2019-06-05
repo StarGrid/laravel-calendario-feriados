@@ -8,8 +8,8 @@ use Eloquent\Enumeration\AbstractEnumeration;
  * Class ResponseTypeEnum
  * @package StarGrid\LaravelHolidayCalendar\Api
  *
- * @method JSON_RESPONSE() self
- * @method XML_RESPONSE() self
+ * @method static $this JSON_RESPONSE()
+ * @method static $this XML_RESPONSE()
  *
  * @author Gabriel Anhaia <anhaia.gabriel@gmail.com>
  */
