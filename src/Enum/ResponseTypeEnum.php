@@ -1,6 +1,6 @@
 <?php
 
-namespace StarGrid\LaravelHolidayCalendar\Api;
+namespace StarGrid\LaravelHolidayCalendar\Enum;
 
 use Eloquent\Enumeration\AbstractEnumeration;
 
