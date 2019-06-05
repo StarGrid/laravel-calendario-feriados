@@ -1,0 +1,7 @@
+{
+    "name": "stargrid/laravel-calendario-feriados",
+    "description": "Pacote desenvolvido e mantido pela StarGrid (https://www.stargrid.pro) para facilitar a integração com a API (http://www.calendario.com.br/api_feriados_municipais_estaduais_nacionais.php) para a busca de feriados nacionaos, estaduais e municipais.",
+    "type": "library",
+    "license": "GNU Affero General Public License v3.0",
+    "require": {}
+}
