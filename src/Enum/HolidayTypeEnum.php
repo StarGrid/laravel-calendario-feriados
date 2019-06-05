@@ -12,6 +12,7 @@ use Eloquent\Enumeration\AbstractEnumeration;
  * @method static $this STATE()
  * @method static $this MUNICIPAL()
  * @method static $this OPTIONAL()
+ * @method static $this CONVENTIONAL()
  *
  * @author Gabriel Anhaia <gabriel@stargrid.pro>
  */
@@ -27,5 +28,8 @@ class HolidayTypeEnum extends AbstractEnumeration
     const MUNICIPAL = 3;
 
     /** @var int OPTIONAL Feriado facultativo. */
-    const OPTIONAL = 9;
+    const OPTIONAL = 4;
+
+    /** @var int CONVENTIONAL Feriado convencional. */
+    const CONVENTIONAL = 9;
 }
