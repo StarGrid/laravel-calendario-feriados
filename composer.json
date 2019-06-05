@@ -4,14 +4,15 @@
     "type": "library",
     "license": "GNU Affero General Public License v3.0",
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "eloquent/enumeration": "^6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.5"
     },
     "autoload": {
         "psr-4": {
-            "StarGrid\\LaravelCalendarioFeriados\\": "src/"
+            "StarGrid\\LaravelHolidayCalendar\\": "src/"
         }
     }
 }
