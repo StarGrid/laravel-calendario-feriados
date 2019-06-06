@@ -1,6 +1,6 @@
 <?php
 
-namespace StarGrid\LaravelHolidayCalendar\Parser\Factory;
+namespace StarGrid\LaravelHolidayCalendar\Factory;
 
 use PHPUnit\Framework\TestCase;
 
