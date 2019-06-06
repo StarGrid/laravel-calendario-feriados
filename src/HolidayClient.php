@@ -19,6 +19,8 @@ use StarGrid\LaravelHolidayCalendar\{Entity\HolidayEntity,
  */
 class HolidayClient
 {
+    // TODO: Create constant - url
+
     /** @var Client $guzzleHttp Cliente Http para a integração com a API de feriados. */
     protected $guzzleHttp;
 
