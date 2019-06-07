@@ -53,5 +53,9 @@ class LaravelHolidayCalendarServiceProvider extends ServiceProvider
 
             return $holidayClient;
         });
+
+        $this->app->bind('holiday_calendar_client', function () {
+            return app(HolidayClient::class);
+        });
     }
 }
