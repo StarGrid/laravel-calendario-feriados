@@ -2,7 +2,6 @@
 
 namespace StarGrid\LaravelHolidayCalendar\Provider;
 
-
 use Illuminate\Support\ServiceProvider;
 use StarGrid\LaravelHolidayCalendar\Exception\ConfigurationException;
 use StarGrid\LaravelHolidayCalendar\HolidayClient;
@@ -53,10 +52,6 @@ class LaravelHolidayCalendarServiceProvider extends ServiceProvider
             );
 
             return $holidayClient;
-        });
-
-        $this->app->bind('holiday_calendar_client', function () {
-            return app(HolidayClient::class);
         });
     }
 }
