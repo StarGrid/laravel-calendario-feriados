@@ -35,16 +35,5 @@
         "tests"
       ]
     }
-  },
-  "scripts" : {
-    "post-update-cmd": [
-      "php artisan vendor:publish --provider=\"StarGrid\\LaravelHolidayCalendar\\Laravel\\LaravelHolidayCalendarServiceProvider\""
-    ],
-    "post-install-cmd": [
-      "php artisan vendor:publish --provider=\"StarGrid\\LaravelHolidayCalendar\\Laravel\\LaravelHolidayCalendarServiceProvider\""
-    ],
-    "post-package-install": [
-      "php artisan vendor:publish --provider=\"StarGrid\\LaravelHolidayCalendar\\Laravel\\LaravelHolidayCalendarServiceProvider\""
-    ]
   }
 }
