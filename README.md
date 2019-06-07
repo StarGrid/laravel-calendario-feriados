@@ -67,6 +67,18 @@ ___
 
 No final o resultado será um array de objetos ```StarGrid\LaravelHolidayCalendar\Entity\HolidayEntity```.
 
+Esse objeto possuí os seguintes métodos para se obter os dados (`getters`):
+
+- public function getDate(): \DateTime
+- public function getName(): string
+- public function getDescription(): string
+- public function getLink(): string
+- public function getTypeEnum(): HolidayTypeEnum
+- public function getTypeName(): string
+- public function getRawData(): string
+
+Também possuí seus respectivos `setters`.
+
 ## Service-Provider e Facade
 
 É possível utilizar o DI do próprio Laravel para se obter uma instância de `StarGrid\LaravelHolidayCalendar\HolidayClient`, se você estiver em uma controller, por exemplo:
