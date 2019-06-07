@@ -2,6 +2,7 @@
 
 namespace StarGrid\LaravelHolidayCalendar\Laravel;
 
+
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -20,7 +21,7 @@ class LaravelHolidayCalendarServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $path = realpath(__DIR__.'/../../config/config.php');
+        $path = realpath(__DIR__.'/../../config/holiday_calendar.php');
         $this->publishes([$path => config_path('holiday_calendar.php')], 'holiday-calendar');
         $this->mergeConfigFrom($path, 'holiday-calendar');
     }
