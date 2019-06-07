@@ -37,7 +37,7 @@
     }
   },
   "scripts" : {
-    "post-install-cmd": [
+    "post-update-cmd": [
       "Illuminate\\Foundation\\ComposerScripts::postInstall",
       "php artisan vendor:publish --provider=\"StarGrid\\LaravelHolidayCalendar\\Laravel\\LaravelHolidayCalendarServiceProvider\""
     ]
