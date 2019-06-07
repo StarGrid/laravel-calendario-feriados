@@ -36,9 +36,8 @@ class LaravelHolidayCalendarServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(HolidayClient::class, function ($app) {
-
-            $urlApi = getenv('LARAVEL_HOLIDAY_CALENDAR_URL_API');
-            $token = getenv('LARAVEL_HOLIDAY_CALENDAR_TOKEN');
+            $urlApi = config('holiday-calendar.url_api');
+            $token = config('holiday-calendar.token');
 
             if (empty($urlApi)) {
                 throw new ConfigurationException('Url not defined (LARAVEL_HOLIDAY_CALENDAR_URL_API)');
