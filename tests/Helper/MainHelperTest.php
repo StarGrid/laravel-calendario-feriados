@@ -1,12 +1,8 @@
 <?php
 
-namespace StarGrid\LaravelHolidayCalendar\Factory;
+namespace StarGrid\LaravelHolidayCalendar\Helper;
 
 use PHPUnit\Framework\TestCase;
-
-use StarGrid\LaravelHolidayCalendar\{
-    Helper\MainlHelper
-};
 
 /**
  * Class MainHelperTest

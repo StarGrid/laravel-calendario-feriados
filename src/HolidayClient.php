@@ -7,6 +7,7 @@ use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 use StarGrid\LaravelHolidayCalendar\{Entity\HolidayEntity,
     Enum\ResponseTypeEnum,
+    Exception\ParserException,
     Parser\Contract\ParserInterface,
     Parser\Factory\ParserFactory,
     Parser\JsonParser};
@@ -62,6 +63,7 @@ class HolidayClient
      *
      * @return HolidayClient
      * @throws ParserException
+     * @throws Exception\ParserException
      */
     public function setJsonResponse(): HolidayClient
     {
@@ -77,6 +79,7 @@ class HolidayClient
      *
      * @return HolidayClient
      * @throws ParserException
+     * @throws Exception\ParserException
      */
     public function setXmlResponse(): HolidayClient
     {
