@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a56eea7c13c5f7e79cd14b5a1404ea0e",
+    "content-hash": "2ebac58a28d9cbf255102193272424a0",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -351,16 +351,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.8.20",
+            "version": "v5.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "318bea0200dc61888d55f52b8d5d029434684e31"
+                "reference": "e275519c58246cc4011c798f9b0a0f83aae2aab7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/318bea0200dc61888d55f52b8d5d029434684e31",
-                "reference": "318bea0200dc61888d55f52b8d5d029434684e31",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/e275519c58246cc4011c798f9b0a0f83aae2aab7",
+                "reference": "e275519c58246cc4011c798f9b0a0f83aae2aab7",
                 "shasum": ""
             },
             "require": {
@@ -408,7 +408,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2019-05-31T06:33:24+00:00"
+            "time": "2019-04-01T19:02:05+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -1428,16 +1428,16 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "8b389aebe1b8b0578430bda0c7c95a829608e059"
+                "reference": "1038454804406b0b5f5f520358e78c1c2f71501e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/8b389aebe1b8b0578430bda0c7c95a829608e059",
-                "reference": "8b389aebe1b8b0578430bda0c7c95a829608e059",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/1038454804406b0b5f5f520358e78c1c2f71501e",
+                "reference": "1038454804406b0b5f5f520358e78c1c2f71501e",
                 "shasum": ""
             },
             "require": {
@@ -1473,7 +1473,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2019-02-20T10:12:59+00:00"
+            "time": "2019-06-07T04:22:29+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -2329,8 +2329,6 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "ext-simplexml": "*"
-    },
+    "platform": [],
     "platform-dev": []
 }
