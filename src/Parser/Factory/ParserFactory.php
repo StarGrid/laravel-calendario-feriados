@@ -6,7 +6,7 @@ use StarGrid\LaravelHolidayCalendar\Enum\ResponseTypeEnum;
 use StarGrid\LaravelHolidayCalendar\Parser\Contract\ParserInterface;
 use StarGrid\LaravelHolidayCalendar\Parser\JsonParser;
 use StarGrid\LaravelHolidayCalendar\Parser\XmlParser;
-use StarGrid\LaravelHolidayCalendar\ParserException;
+use StarGrid\LaravelHolidayCalendar\Exception\ParserException;
 
 /**
  * Class ParserFactory

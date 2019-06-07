@@ -3,12 +3,12 @@
 namespace StarGrid\LaravelHolidayCalendar\Exception;
 
 /**
- * Class ParserException
+ * Class ConfigurationException
  * @package StarGrid\LaravelHolidayCalendar
  *
  * @author Gabriel Anhaia <anhaia.gabriel@gmail.com>
  */
-class ParserException extends \Exception
+class ConfigurationException extends \Exception
 {
     
 }

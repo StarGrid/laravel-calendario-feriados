@@ -4,6 +4,8 @@ namespace StarGrid\LaravelHolidayCalendar\Laravel;
 
 
 use Illuminate\Support\ServiceProvider;
+use StarGrid\LaravelHolidayCalendar\Exception\ConfigurationException;
+use StarGrid\LaravelHolidayCalendar\HolidayClient;
 
 /**
  * Class LaravelHolidayCalendarServiceProvider
@@ -33,6 +35,25 @@ class LaravelHolidayCalendarServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(HolidayClient::class, function ($app) {
 
+            $urlApi = getenv('LARAVEL_HOLIDAY_CALENDAR_URL_API');
+            $token = getenv('LARAVEL_HOLIDAY_CALENDAR_TOKEN');
+
+            if (empty($urlApi)) {
+                throw new ConfigurationException('Url not defined (LARAVEL_HOLIDAY_CALENDAR_URL_API)');
+            }
+
+            if (empty($token)) {
+                throw new ConfigurationException('Token not defined (LARAVEL_HOLIDAY_CALENDAR_URL_API)');
+            }
+
+            $holidayClient = new HolidayClient(
+                $urlApi,
+                $token
+            );
+
+            return $holidayClient;
+        });
     }
 }
