@@ -8,36 +8,36 @@ Este projeto foi iniciado pela [StarGrid](https://stargrid.pro) para ajudar os u
 
 Para instalar a dependência através do composer, através do terminal, entre na pasta de seu projeto (Laravel) e digite:
 
-```
-composer require stargrid/laravel-calendario-feriados
+```sh
+$ composer require stargrid/laravel-calendario-feriados
 ```
 
 Após a instalação do pacote, execute o próximo comando:
-``` 
-php artisan vendor:publish --provider="StarGrid\LaravelHolidayCalendar\Provider\LaravelHolidayCalendarServiceProvider"
+```sh
+$ php artisan vendor:publish --provider="StarGrid\LaravelHolidayCalendar\Provider\LaravelHolidayCalendarServiceProvider"
 ```
 
 Agora é necessário configurar no ```.env``` o seu *token* de acesso da API:
-```
+```env
 LARAVEL_HOLIDAY_CALENDAR_TOKEN=SEU_TOKEN_AQUI
 ```
 
 ## Utilização
 
 Para utilizar basta primeiramente instânciar a classe `StarGrid\LaravelHolidayCalendar\HolidayClient` conforme o exemplo a seguir:
-```
+```php
 $holidayClient = new StarGrid\LaravelHolidayCalendar\HolidayClient(env('LARAVEL_HOLIDAY_CALENDAR_TOKEN'));
 ```
 
 Antes de efetuar as chamadas da API, é necessário definir o tipo de retorno (Response). A [API Calendário](http://www.calendario.com.br/api_feriados_municipais_estaduais_nacionais.php) permite dois formatos, **JSON** ou **XML**.
 
 Para definir o retorno do tipo **JSON**: 
-```
+```php
 $holidayClient = new StarGrid\LaravelHolidayCalendar\HolidayClient(env('LARAVEL_HOLIDAY_CALENDAR_TOKEN'));
 $holidayClient->setJsonResponse();
 ```
 Para definir o retorno do tipo **XML**:
-```
+```php
 $holidayClient = new StarGrid\LaravelHolidayCalendar\HolidayClient(env('LARAVEL_HOLIDAY_CALENDAR_TOKEN'));
 $holidayClient->setXmlResponse();
 ```
@@ -45,7 +45,7 @@ $holidayClient->setXmlResponse();
 Finalmente para fazer a chamada da API, exitem dois tipos de consultas.
 
 #### Consulta através do código do IBGE do município:
-```
+```php
 $response = $client->setJsonResponse()
             ->getHolidaysByIbgeCode(2019, 4314902);
 ```
@@ -53,7 +53,7 @@ $response = $client->setJsonResponse()
 - O segundo parâmetro é o código do IBGE.
 
 #### Consulta através do nome do município:
-```
+```php
 $response = $client->setJsonResponse()
             ->getHolidaysByCity(2019, 'Porto Alégre' , 'RS');
 ```
@@ -89,6 +89,8 @@ class HomeController
 
 Ou utiliza-lo através do *Facade* do próprio pacote:
 ```php
+<?php
+
 namespace App\Http\Controllers;
 
 use StarGrid\LaravelHolidayCalendar\Facade\HolidayClientFacade;
