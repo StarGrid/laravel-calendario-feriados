@@ -24,7 +24,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "StarGrid\\LaravelHolidayCalendar\\Laravel\\LaravelHolidayCalendarServiceProvider"
+        "StarGrid\\LaravelHolidayCalendar\\Provider\\LaravelHolidayCalendarServiceProvider"
       ]
     }
   },
