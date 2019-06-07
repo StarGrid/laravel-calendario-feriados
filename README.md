@@ -69,13 +69,15 @@ No final o resultado será um array de objetos ```StarGrid\LaravelHolidayCalenda
 
 Esse objeto possuí os seguintes métodos para se obter os dados (`getters`):
 
-- public function getDate(): \DateTime
-- public function getName(): string
-- public function getDescription(): string
-- public function getLink(): string
-- public function getTypeEnum(): HolidayTypeEnum
-- public function getTypeName(): string
-- public function getRawData(): string
+```php 
+public function getDate(): \DateTime
+public function getName(): string
+public function getDescription(): string
+public function getLink(): string
+public function getTypeEnum(): HolidayTypeEnum
+public function getTypeName(): string
+public function getRawData(): string
+```
 
 Também possuí seus respectivos `setters`.
 
