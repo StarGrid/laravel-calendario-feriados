@@ -55,7 +55,7 @@ $response = $client->setJsonResponse()
 #### Consulta através do nome do município:
 ```php
 $response = $client->setJsonResponse()
-            ->getHolidaysByCity(2019, 'Porto Alégre' , 'RS');
+            ->getHolidaysByCity(2019, 'São Paulo' , 'SP');
 ```
 - O primeiro parâmetro é o ano para a consulta dos feriados.
 - O segundo parâmetro é o nome da cidade a ser consultada.
@@ -96,7 +96,7 @@ class HomeController
     public function testMethod(HolidayClient $holidayClient)
     {
         $response = $holidayClient->setJsonResponse()
-                    ->getHolidaysByCity(2019, 'Porto Alégre' , 'RS');    
+                    ->getHolidaysByCity(2019, 'São Paulo' , 'SP');    
     }
 }
 ```
@@ -114,7 +114,7 @@ class HomeController
     public function testMethod()
     {
         $response = HolidayClientFacade::setJsonResponse()
-                    ->getHolidaysByCity(2019, 'Porto Alégre' , 'RS');    
+                    ->getHolidaysByCity(2019, 'São Paulo' , 'SP');    
     }
 }
 ```
