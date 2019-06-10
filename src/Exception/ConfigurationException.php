@@ -8,7 +8,7 @@ namespace StarGrid\LaravelHolidayCalendar\Exception;
  *
  * @author Gabriel Anhaia <anhaia.gabriel@gmail.com>
  */
-class ConfigurationException extends \Exception
+class ConfigurationException extends GeneralHolidayException
 {
     
 }

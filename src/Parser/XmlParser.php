@@ -4,6 +4,7 @@ namespace StarGrid\LaravelHolidayCalendar\Parser;
 
 use StarGrid\LaravelHolidayCalendar\Entity\HolidayEntity;
 use StarGrid\LaravelHolidayCalendar\Enum\HolidayTypeEnum;
+use StarGrid\LaravelHolidayCalendar\Exception\ParserException;
 use StarGrid\LaravelHolidayCalendar\Parser\Contract\ParserInterface;
 
 /**
@@ -20,6 +21,10 @@ class XmlParser implements ParserInterface
     public function parse(string $rawResponse): array
     {
         $holidays = simplexml_load_string($rawResponse);
+
+        if (empty($holidays)) {
+            throw new ParserException('Invalid response.');
+        }
 
         $formattedResponse = [];
 
