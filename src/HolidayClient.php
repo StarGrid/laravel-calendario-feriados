@@ -93,14 +93,14 @@ class HolidayClient
     /**
      * Método reponsável por buscar os feriados de uma cidade através do nome da cidade e do estado.
      *
-     * @param int $year Ano de busca dos feriados.
+     * @param int|array $years Ano de busca dos feriados.
      * @param string $cityName Nome da cidade a buscar os feriados.
      * @param string $stateName Nome do estado a buscar os feriados.
      *
      * @return HolidayEntity[]
      * @throws ParserException
      */
-    public function getHolidaysByCity(int $year, string $cityName, string $stateName)
+    public function getHolidaysByCity($years, string $cityName, string $stateName)
     {
         if (empty($this->parser)) {
             throw new ParserException(
@@ -108,24 +108,33 @@ class HolidayClient
             );
         }
 
-        $queryParams = [
-            'token' => $this->token,
-            'year' => $year,
-            'cidade' => Helper\MainlHelper::normalizeCityName($cityName),
-            'state' => strtoupper($stateName)
-        ];
-
-        if ($this->parser instanceof JsonParser) {
-            $queryParams['json'] = true;
+        if (!is_array($years)) {
+            $years = [$years];
         }
 
-        $url = $this->baseUrl . '?' . http_build_query($queryParams);
+        $finalResponse = [];
+        foreach ($years as $year) {
+            $queryParams = [
+                'token' => $this->token,
+                'year' => $year,
+                'cidade' => Helper\MainlHelper::normalizeCityName($cityName),
+                'state' => strtoupper($stateName)
+            ];
 
-        $guzzleResponse = $this->getHolidays($url);
+            if ($this->parser instanceof JsonParser) {
+                $queryParams['json'] = true;
+            }
 
-        $rawResponse = $guzzleResponse->getBody()->getContents();
+            $url = $this->baseUrl . '?' . http_build_query($queryParams);
 
-        return $this->parser->parse($rawResponse);
+            $guzzleResponse = $this->getHolidays($url);
+
+            $rawResponse = $guzzleResponse->getBody()->getContents();
+
+            $finalResponse = array_merge($finalResponse, $this->parser->parse($rawResponse));
+        }
+
+        return $finalResponse;
     }
 
     /**
