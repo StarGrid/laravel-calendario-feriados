@@ -31,15 +31,20 @@ class JsonParser implements ParserInterface
         foreach ($holidays as $holiday) {
             $holidayType = (int) $holiday['type_code'];
 
-            $formattedResponse[] = new HolidayEntity(
-                \DateTime::createFromFormat('d/m/Y', $holiday['date']),
-                $holiday['name'],
-                $holiday['description'],
-                $holiday['link'],
-                HolidayTypeEnum::memberByValue($holidayType),
-                $holiday['type'],
-                json_encode($holiday)
-            );
+            try {
+                $formattedResponse[] = new HolidayEntity(
+                    \DateTime::createFromFormat('d/m/Y', $holiday['date']),
+                    $holiday['name'],
+                    $holiday['description'],
+                    $holiday['link'],
+                    HolidayTypeEnum::memberByValue($holidayType),
+                    $holiday['type'],
+                    json_encode($holiday)
+                );
+            } catch (\Exception $exception) {
+                echo $exception->getMessage();
+                continue;
+            }
         }
 
         return $formattedResponse;
