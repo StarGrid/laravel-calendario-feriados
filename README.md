@@ -6,11 +6,18 @@ Este projeto foi iniciado pela [StarGrid](https://stargrid.pro) para ajudar os u
 
 ## Instalação
 
-Para instalar a dependência através do composer, através do terminal, entre na pasta de seu projeto (Laravel) e digite:
+Para instalar a dependência através do composer, através do terminal, entre na pasta de seu projeto e digite:
 
 ```sh
-$ composer require stargrid/laravel-calendario-feriados
+$ composer require stargrid/laravel-calendario-feriados:"v2.0.0"
 ```
+
+Obs: Caso esteja usando versões inferiores:
+
+```sh
+$ composer require stargrid/laravel-calendario-feriados:"v1.0.0"
+```
+
 
 Após a instalação do pacote, execute o próximo comando:
 ```sh
